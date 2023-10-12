@@ -3,6 +3,8 @@
     "files.associations": {
         "iomanip": "cpp",
         "cmath": "cpp",
-        "iostream": "cpp"
-    }
+        "iostream": "cpp",
+        "random": "cpp"
+    },
+    "editor.fontFamily": "JetBrains Mono"
 }
