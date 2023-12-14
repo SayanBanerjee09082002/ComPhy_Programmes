@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 def initialize_protein(num_amino_acids):
     # Initialize a 2D lattice representing the protein structure
-    protein_structure = [[0, 0] for _ in range(num_amino_acids)]
+    protein_structure = [[i,0] for i in range(num_amino_acids)]
     return protein_structure
 
 def calculate_energy(protein_structure):
@@ -25,7 +25,7 @@ def metropolis_algorithm(protein_structure, num_steps, temperature):
         amino_acid_index = random.randint(0, len(protein_structure) - 1)
 
         # Propose a random move (up, down, left, or right)
-        move = random.choice([(0, 1), (0, -1), (1, 0), (-1, 0)])
+        move = random.choice([(1, 1), (1, -1), (-1, 1), (-1, -1)])
 
         # Make a copy of the current protein structure
         new_structure = [coord.copy() for coord in protein_structure]
@@ -51,7 +51,7 @@ def metropolis_algorithm(protein_structure, num_steps, temperature):
 # Parameters
 num_amino_acids = 25
 temperature = 1.0
-num_steps = 10000
+num_steps = 100
 
 # Initialize protein structure
 protein_structure = initialize_protein(num_amino_acids)
